@@ -54,8 +54,6 @@ class Item extends Component {
       };
 
     render(){
-        console.log(this.state.items);
-        //if (this.state.items.length === 0) return <p style={{textAlign: "center", color: "red"}}>We have 0 items for this bill.</p>;  
         return(
             <div className='container col-md-9' style={{ marginTop: 20 }}>
             <Link className="btn btn-success form-control" style={{marginTop: '20px'}} to={"/additem/"+this.state.billId+"/"+this.state.customerId}>&#43; Add Item</Link>
@@ -72,7 +70,8 @@ class Item extends Component {
                 <tbody>
                     {this.itemRender()}
                 </tbody>
-            </table>           
+            </table>
+            {this.state.items.length === 0 && <div class="alert alert-warning" role="alert">We have 0 items for this bill.</div>}           
              <Link className="btn btn-warning col-md-12" style={{float: 'right'}} to={"/customerbills/"+this.state.customerId}>&#x2190; Back</Link>
             </div>
         );

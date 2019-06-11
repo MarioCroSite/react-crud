@@ -47,9 +47,7 @@ class Bill extends Component {
         }
       };
 
-    render(){
-        //console.log(this.state.bills);
-        //if (this.state.bills.length === 0) return <p style={{textAlign: "center", color: "red"}}>We have 0 Bills for this customer.</p>;  
+    render(){ 
         return(
             <div className='container col-md-9' style={{ marginTop: 20 }}>
             <Link className="btn btn-success form-control" style={{marginTop: '20px'}} to={"/addbill/"+this.state.userId}>&#43; Add Bill</Link>
@@ -67,6 +65,7 @@ class Bill extends Component {
                     {this.billRender()}
                 </tbody>
             </table>
+            {this.state.bills.length === 0 && <div class="alert alert-warning" role="alert">We have 0 Bills for this customer.</div>}   
             <Link className="btn btn-warning col-md-12" style={{float: 'right'}} to={"/logged"}>&#x2190; Back</Link>
             </div>
         );

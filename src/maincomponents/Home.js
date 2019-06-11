@@ -193,7 +193,6 @@ class Home extends Component {
   render() {
     const { currentCustomers, pageSize, currentPage, selectedOption, cities, states} = this.state;
     const paging = this.paginationEffect(this.mappingCustomerCitiesStates(currentCustomers, cities, states), currentPage, pageSize);
-    //if (paging.length === 0) return <p>We have 0 customers.</p>;  
     return (
       <div className="container col-md-9" style={{ marginTop: 20 }} >
         <div class="row">
@@ -224,7 +223,7 @@ class Home extends Component {
             {this.customerRender(paging)}
           </tbody>
         </table>
-
+        {paging.length === 0 && <div class="alert alert-warning" role="alert">We have 0 customers.</div>}  
         <Pagination
           itemsCount={this.state.currentCustomers.length}
           pageSize={this.state.pageSize}
