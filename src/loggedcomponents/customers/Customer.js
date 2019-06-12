@@ -20,9 +20,11 @@ class Customer extends Component {
                 <td>{this.props.customer.StateName}</td>
                 {getJwt() != null ?
                 <td>
-                    <Link className="ml-1 btn btn-primary btn-sm" to={"/customerbills/" + this.props.customer.Id}>Bills</Link>
-                    <Link className="ml-1 btn btn-warning btn-sm" to={"/editcustomer/" + this.props.customer.Id}>Edit</Link>
-                    <button className="ml-1 btn btn-danger btn-sm" onClick={() => this.props.deleteCustomer(this.props.customer.Id)}>Delete</button>
+                    <div className="btn-group">
+                        <Link className="btn btn-primary btn-sm" to={"/customerbills/" + this.props.customer.Id}>Bills</Link>
+                        <Link className="btn btn-warning btn-sm" to={"/editcustomer/" + this.props.customer.Id}>Edit</Link>
+                        <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteCustomer(this.props.customer.Id)}>Delete</button>
+                    </div>
                 </td>
                 :
                 <td></td>

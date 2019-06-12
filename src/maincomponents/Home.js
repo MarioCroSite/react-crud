@@ -195,12 +195,12 @@ class Home extends Component {
     const paging = this.paginationEffect(this.mappingCustomerCitiesStates(currentCustomers, cities, states), currentPage, pageSize);
     return (
       <div className="container col-md-9" style={{ marginTop: 20 }} >
-        <div class="row">
-          <div class="col-md-6">
+        <div className="row">
+          <div className="col-md-6">
             <span>Odaberi koliko kupaca želiš:</span>
             <Select options={ selectItems } value={selectedOption} onChange={this.handleSelectChange}/> 
           </div>
-          <div class="col-md-6">
+          <div className="col-md-6">
             <span>Pretraži kupce: </span>
             <input type="text" name="search" className="form-control" onChange={e => this.search(e)} />
           </div>
@@ -210,12 +210,12 @@ class Home extends Component {
         <table className="table table-striped" style={{ marginTop: 20 }} >
           <thead>
             <tr>
-              <th>Name <button type="button" className="btn btn-success" onClick={() => this.sortAsc('Name')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Name')}>&#8595;</button></th>
-              <th>Surname <button type="button" className="btn btn-success" onClick={() => this.sortAsc('Surname')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Surname')}>&#8595;</button></th>
-              <th>Email <button type="button" className="btn btn-success" onClick={() => this.sortAsc('Email')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Email')}>&#8595;</button></th>
-              <th>Telephone <button type="button" className="btn btn-success" onClick={() => this.sortAsc('Telephone')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Telephone')}>&#8595;</button></th>
-              <th>City <button type="button" className="btn btn-success" onClick={() => this.sortAsc('CityName')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('CityName')}>&#8595;</button></th>
-              <th>State <button type="button" className="btn btn-success" onClick={() => this.sortAsc('StateName')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('StateName')}>&#8595;</button></th>
+              <th>Name <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('Name')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Name')}>&#8595;</button></div></th>
+              <th>Surname <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('Surname')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Surname')}>&#8595;</button></div></th>
+              <th>Email address <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('Email')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Email')}>&#8595;</button></div></th>
+              <th>Telephone <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('Telephone')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('Telephone')}>&#8595;</button></div></th>
+              <th>City <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('CityName')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('CityName')}>&#8595;</button></div></th>
+              <th>State <div className="btn-group"><button type="button" className="btn btn-success" onClick={() => this.sortAsc('StateName')}>&#8593;</button> <button type="button" className="btn btn-danger" onClick={() => this.sortDesc('StateName')}>&#8595;</button></div></th>
               {getJwt() != null ? <th>Options</th> : <th></th>}
             </tr>
           </thead>
@@ -223,7 +223,7 @@ class Home extends Component {
             {this.customerRender(paging)}
           </tbody>
         </table>
-        {paging.length === 0 && <div class="alert alert-warning" role="alert">We have 0 customers.</div>}  
+        {paging.length === 0 && <div className="alert alert-warning" role="alert">We have 0 customers.</div>}  
         <Pagination
           itemsCount={this.state.currentCustomers.length}
           pageSize={this.state.pageSize}

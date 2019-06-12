@@ -71,7 +71,7 @@ class Item extends Component {
                     {this.itemRender()}
                 </tbody>
             </table>
-            {this.state.items.length === 0 && <div class="alert alert-warning" role="alert">We have 0 items for this bill.</div>}           
+            {this.state.items.length === 0 && <div className="alert alert-warning" role="alert">We have 0 items for this bill.</div>}           
              <Link className="btn btn-warning col-md-12" style={{float: 'right'}} to={"/customerbills/"+this.state.customerId}>&#x2190; Back</Link>
             </div>
         );

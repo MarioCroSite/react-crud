@@ -13,7 +13,7 @@ class OneItem extends Component{
                 <td>{this.props.item.Quantity}</td>
                 <td>{this.props.item.TotalPrice}</td>
                 <td>
-                    <button className="ml-1 btn btn-danger btn-sm" onClick={() => this.props.deleteItem(this.props.item.Id)}>Delete</button>
+                    <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteItem(this.props.item.Id)}>Delete</button>
                 </td>
             </tr>
         );

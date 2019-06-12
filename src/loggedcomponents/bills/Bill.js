@@ -65,7 +65,7 @@ class Bill extends Component {
                     {this.billRender()}
                 </tbody>
             </table>
-            {this.state.bills.length === 0 && <div class="alert alert-warning" role="alert">We have 0 Bills for this customer.</div>}   
+            {this.state.bills.length === 0 && <div className="alert alert-warning" role="alert">We have 0 Bills for this customer.</div>}   
             <Link className="btn btn-warning col-md-12" style={{float: 'right'}} to={"/logged"}>&#x2190; Back</Link>
             </div>
         );
